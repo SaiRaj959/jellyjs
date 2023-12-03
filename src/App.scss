@@ -1,0 +1,43 @@
+body{
+    height: 100vh;
+}
+#root{
+    height: inherit;
+}
+
+.portfolio-bg{
+    background: linear-gradient(
+        rgba(0, 0, 0, 0.7), 
+        rgba(0, 0, 0, 0.7)
+      ), url('../public/assets/portfoliobg.jpg') no-repeat;
+    background-size: cover;
+    background-position: bottom;
+    color: #fff;
+}
+.repo-bg{
+    background: linear-gradient(
+        rgba(0, 0, 0, 0.6), 
+        rgba(0, 0, 0, 0.4)
+      ), url('../public/assets/repobg.png') no-repeat;
+    background-size: cover;
+    background-position: bottom;
+    color: #fff;
+}
+.docs-bg{
+    background: linear-gradient(
+        rgba(0, 0, 0, 0.6), 
+        rgba(0, 0, 0, 0.6)
+      ), url('../public/assets/docsbg.png') no-repeat;
+    background-size: cover;
+    background-position: bottom;
+    color: #fff;
+}
+.coverletter-bg{
+    background: linear-gradient(
+        rgba(0, 0, 0, 0.6), 
+        rgba(0, 0, 0, 0.6)
+      ), url('../public/assets/coverletter.png') no-repeat;
+    background-size: cover;
+    background-position: bottom;
+    color: #fff;
+}
