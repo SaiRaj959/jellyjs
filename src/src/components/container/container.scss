@@ -1,0 +1,32 @@
+
+.jelly{
+    &-container{
+        height: 100%;
+        &-title{
+            font-size: 32px;
+            font-weight: 600;
+            margin: 0 32px;
+            padding: 24px 0;
+        }
+        &-description{
+            font-size: 22px;
+            margin: 0 40px;
+        }
+    }
+}
+
+@media screen and (max-width: 798px){
+    .jelly{
+        &-container{
+            &-title{
+                font-size: 24px;
+                margin: 0 12px;
+                padding: 12px 0;
+            }
+            &-description{
+                font-size: 16px;
+                margin: 0 12px;            
+            }
+        }
+    }
+}
