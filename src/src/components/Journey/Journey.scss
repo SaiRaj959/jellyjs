@@ -1,0 +1,75 @@
+.journey{
+    padding: 24px;
+    box-sizing: border-box;
+    margin-top: 40px;
+    &-step{
+        min-height: 300px;
+        display: flex;
+        padding: 6px 38px;
+        box-sizing: border-box;
+
+        &-title{
+            width: 260px;
+            max-width: 260px;
+            text-align: right;
+            text-align: right;
+            font-size: 24px;
+            padding-right: 12px;
+            box-sizing: border-box;
+        }
+    }
+    &-candle{
+        width: 40px;
+        &-head{
+            width: 32px;
+            height: 32px;
+            margin: auto;
+            border-radius: 50%;
+            border: solid 1px #045daf;
+            background-color: #045daf;
+        }
+        &-line{
+            width: 3px;
+            height: calc(100% - 32px);
+            background-color: #045daf;
+            margin: auto;
+        }
+    }
+    &-content{
+        width: calc(100% - 40px);
+        padding: 0 24px;
+        margin-bottom: 48px;
+        &-header{
+            &-title{
+                font-size: 24px;
+                font-weight: 500;
+            }
+            &-company{
+                display: flex;
+                margin: 8px;
+                span{
+                    display: inline-block;
+                }
+                .company{
+                    font-size: 21px;
+                    margin: 0 12px;
+                }
+            }
+
+        }
+        &-body{
+
+            &-calander{
+                display: flex;
+                text-align: center;
+            }
+            &-right{
+                padding: 0 24px;
+            }
+            &-skills{
+                display: flex;
+                flex-wrap: wrap;
+            }
+        }
+    }
+}

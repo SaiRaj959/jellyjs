@@ -1,0 +1,89 @@
+.angular{
+    background: url('../../../public/assets/angular.svg') no-repeat;
+}
+.react{
+    background: url('../../../public/assets/react.svg') no-repeat;
+}
+.js{
+    background: url('../../../public/assets/js.svg') no-repeat;
+}
+.ts{
+    background: url('../../../public/assets/ts.svg') no-repeat;
+}
+.jquery{
+    background: url('../../../public/assets/jquery.svg') no-repeat;
+}
+.node{
+    background: url('../../../public/assets/node.svg') no-repeat;
+}
+.express{
+    background: url('../../../public/assets/express.svg') no-repeat;
+}
+.html{
+    background: url('../../../public/assets/html.svg') no-repeat;
+}
+.css{
+    background: url('../../../public/assets/css.svg') no-repeat;
+}
+.git{
+    background: url('../../../public/assets/git.svg') no-repeat;
+}
+.junkins{
+    background: url('../../../public/assets/junkins.svg') no-repeat;
+}
+.office{
+    background: url('../../../public/assets/office.svg') no-repeat;
+}
+.zoom{
+    background: url('../../../public/assets/zoom.svg') no-repeat;
+}
+.inbox{
+    background: url('../../../public/assets/inbox.svg') no-repeat;
+    background-position: center;
+}
+
+.skills{
+    &-container{
+        display: flex;
+        justify-content: start;
+        flex-flow: row wrap;
+    }
+}
+.skill{
+    &-card{
+        margin: 12px 48px;
+        &-icon{
+            width: 180px;
+            height: 120px;
+            padding: 24px 0;
+            background-position: center;
+            background-size: 120px;
+        }
+        &-progress{
+            width: 80%;
+            height: 16px;
+            border-radius: 12px;
+            border: 1px solid #1c9bf6;
+            box-sizing: border-box;
+            span{
+                display: block;
+                border-radius: 12px;
+                height: 12px;
+                background: #1c9bf6;
+                margin: 1px;
+            }
+        }
+        &-label{
+            display: flex;
+            justify-content: space-between;
+        }
+        // &-exp{
+        //     border-radius: 12px;
+        //     background: #1c9bf6;
+        //     color: #fff;
+        //     padding: 2px 8px;
+        //     font-size: 12px;
+        //     font-weight: 900;
+        // }
+    }
+}

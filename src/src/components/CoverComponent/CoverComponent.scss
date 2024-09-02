@@ -1,0 +1,188 @@
+.cover{
+    height: 60%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    &-wrapper{
+        width: 640px;
+        margin: auto;
+        height: 100%;
+        padding: 200px 0 32px 0;
+        box-sizing: border-box;
+        display: flex;
+    }
+    &-content{
+        width: 400px;
+        height: 100%;
+        padding: 70px 24px;
+        box-sizing: border-box;
+        text-align: right;
+        .name{
+            font-size: 48px;
+            font-weight: 600;
+        }
+        .designation, .company{
+            text-align: right;
+            font-size: 24px;
+            justify-content: end;
+            display: flex;
+            margin: 20px 0;
+
+            span{
+                margin-right: 12px;
+            }
+        }
+    }
+    &-actions{
+        position: relative;
+
+        &-wrapper{
+            left: -80px;
+            top: -50px;
+            position: absolute;
+            width: 54px;
+            background-color: #022d55;
+            border-radius: 16px;
+
+            &:hover{
+                border-radius: 0 16px 16px 0;
+
+                .cover-actions-list{
+                    display: block;
+                }
+            }
+        }
+
+        &-list{
+            position: absolute;
+            right: 54px;
+            width: 222px;
+            background-color: inherit;
+            box-sizing: border-box;
+            border-radius: 16px 0px 0px 16px;
+            display: none;
+
+            .action{
+                height: 54px;
+                box-sizing: border-box;
+                padding: 16px 14px;
+                cursor: pointer;
+                &:hover{
+                    background-color: #045daf;
+                }
+                &-item{
+                    margin-left: 4px;
+                }
+
+                .unclip{
+                    display: inline;
+                }
+                .clip{
+                    display:none;
+                }
+            }
+        }
+    }
+
+    &-dp{
+        
+
+        .dp{
+            background: url('../../../public/assets/yellow_me.png') no-repeat;
+            height: 250px;
+            width: 250px;
+            display: block;
+            background-size: contain;
+            border-radius: 50%;
+            border: 8px solid #c8c8c8c4;
+            // box-shadow: 8px 8px 8px 4px #5c5c5c5c;
+        }
+    }
+}
+.clipped{
+    .clip{
+        display: inline!important;
+    }
+    .unclip{
+        display: none!important;
+    }
+}
+@media screen and (max-width: 798px){
+    .cover{
+        height: 60%;
+        min-height: 224px;    
+        &-wrapper{
+            flex-direction: column-reverse;
+            padding: 24px 0 24px 0;
+            margin: 0;
+            width: 100%;
+        }
+        &-content{
+            width: 100%;
+            height: unset;
+            text-align: center;
+            padding: 0;
+            .name{
+                font-size: 28px;
+            }
+            .designation, .company{
+                font-size: 18px;
+            }
+            > div{
+                justify-content: center!important;
+                margin: 12px 0!important;
+            }
+        }
+        &-actions-wrapper{
+            box-sizing: border-box;
+            width: 310px;
+            max-width: calc(100% - 40px);
+            margin: 0 auto;
+            background-color: rgba(210, 210, 211, 0.6196078431);
+            border-radius: 16px;
+            display: flex;
+            left: 0px;
+            top: 0;
+            position: relative;
+            .p_icon{
+                width: 16px;
+                height: 16px;
+                background-size: 16px;
+                margin: 8px;
+            }
+        }
+        &-image{
+            .dp{
+                margin: auto;
+                height: 60px;
+                width: 60px;
+                background-position: -1860px -1090px;
+                border-width: 4px;
+            }
+        }
+        .gs-logo{
+            margin-right: 12px;
+            height: 24px;
+            width: 24px;
+            background-size: 16px;
+        }
+    }
+    .portfolio{
+        &-content{
+            span{
+                font-size: 16px;
+                font-weight: 500;
+            }
+        }
+        &-more{
+            display: none;
+            // margin: 24px auto 0;
+            // flex-direction: column;
+            // width: 150px;
+            // &-action{
+            //     margin-top: 8px;
+            // }
+        }
+    }
+}

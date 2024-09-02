@@ -1,0 +1,133 @@
+.scards{
+    box-sizing: border-box;
+    padding: 32px 0px;
+    height: 100%;
+    overflow-x: hidden;
+    transition: opacity 0.8s, transform 0.8s;
+    margin: 0 -32px;
+    overflow: hidden;
+
+    &.animate{
+        opacity: 1;
+        transform: translateX(0px);
+    }
+
+    &-title{
+        font-size: 24px;
+        font-weight: 600;
+        padding-left: 48px;
+    }
+
+    &-wrapper{
+        height: 100%;
+        display: flex;
+        overflow-x: scroll;
+    }
+    &-box{
+        height: 160px;
+        width: 400px;
+        margin: 24px 24px;
+        border: 1px solid #c8c8c8c4;
+        border-radius: 16px;
+        transition: transform 0.3s;
+        overflow-x: scroll;
+        background-color: #022d55;
+        box-sizing: border-box;
+        padding: 8px;
+        cursor: pointer;
+
+        &:hover{
+            transform: scale(1.1);
+            border: 1px solid #c8c8c8c4;
+            background-color: #e1e1e170;
+        }
+
+        &.active{
+            background-color: #045daf;
+            color: #fff;
+        }
+
+        &-upper{
+            height: 65px;
+            margin: 8px;
+            width: 100%;
+            display: flex;
+        }
+        &-icon{
+            height: 44px;
+            width: 44px;
+            span{
+                height: 44px;
+                width: 44px;
+                display: block;
+                background-size: 32px;
+            }
+        }
+        &-title{
+            width: calc(100% - 44px);
+            padding: 0 0 0 8px;
+            box-sizing: border-box;
+            .label{
+                font-weight: 600;
+                font-size: 16px;
+                // height: 36px;
+                margin-bottom: 8px;
+                box-sizing: border-box;
+            }
+        }
+    }
+
+    &-calander{
+        display: flex;
+        font-size: 12px;
+        &-icon{
+            margin: 0 8px;
+        }
+        &-details{
+            margin: 10px 0px;
+        }
+    }
+}
+
+@media screen and (max-width: 798px){
+    .scards{
+        padding: 12px 0;
+        margin: 0 0 0 -8px;
+        height: 130px;
+        &-box{
+            margin: 0px 8px;
+            height: 100px;
+            min-width: 280px;
+            &-icon{
+                display:none;
+            }
+            &-title{
+                font-size: 14px;
+            }
+            .sub{
+                position: relative;
+                &-icon{
+                    height: 24px;
+                    width: 24px;
+                    background-size: 16px;
+                }
+                &-company{
+                    display: inline-block;
+                    height: 16px;
+                    margin-left: 8px;
+                    position: absolute;
+                    padding: 4px 0;
+                }
+            }
+            &:hover{
+                transform: scale(1);
+            }
+        }
+
+        &-calander{
+            &-details{
+                margin: 6px 0px;
+            }
+        }
+    }
+}
