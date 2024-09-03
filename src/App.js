@@ -1,15 +1,15 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import HeaderComponent from './components/header';
 import './App.scss';
 
 import Home from './pages/Home';
 import CoverLetter from "./pages/Coverletter";
 import Repositories from "./pages/Repositories";
+import Portfolio from "./pages/Portfolio";
+import Resume from "./pages/Resume";
 
 function App() {
   return (
     <BrowserRouter>
-      <HeaderComponent/>
       <Routes>
         <Route path="/" element={<Home />}>
           <Route index element={<Home />} />
@@ -17,6 +17,8 @@ function App() {
         </Route>
         <Route path="/cover" element={<CoverLetter />}/>
         <Route path="/repositories" element={<Repositories />}/>
+        <Route path="/portfolio" element={<Portfolio />}/>
+        <Route path="/sairaj" element={<Resume />}/>
       </Routes>
     </BrowserRouter>
   );
