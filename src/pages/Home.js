@@ -2,7 +2,7 @@ import React from 'react';
 import * as db from '../data/home';
 import './Home.scss';
 
-export  default class extends React.Component{
+export default class Home extends React.Component{
     constructor(params){
         super(params)
         this.state = {

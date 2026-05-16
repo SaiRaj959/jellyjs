@@ -4,9 +4,6 @@ import './skills.scss';
 import {skills} from '../../data/skills';
 const { Meta } = Card;
 export default class Skills extends React.Component{
-    constructor(props){
-        super(props);
-    }
 
     getCardWidthStyle(level = '0'){
         return {width: parseInt(level)*10 + '%'};

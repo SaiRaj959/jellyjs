@@ -1,5 +1,5 @@
 import React from 'react';
-import {PhoneOutlined, MailOutlined, WhatsAppOutlined, LinkedinOutlined, TwitterOutlined, CopyOutlined, CheckCircleFilled} from '@ant-design/icons';
+import {MailOutlined, LinkedinOutlined, CopyOutlined, CheckCircleFilled} from '@ant-design/icons';
 import './CoverComponent.scss';
 
 
@@ -7,10 +7,6 @@ export default class CoverComponent extends React.Component{
     state = {
     }
     actionEl;
-    constructor(props){
-        super(props);
-        // this.setState(props);
-    }
 
     copyThat = (evt, text)=>{
         navigator.clipboard.writeText(text);
