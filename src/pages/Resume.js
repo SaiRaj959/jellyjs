@@ -2,11 +2,7 @@ import React from 'react';
 
 import './Resume.scss';
 
-export default class extends React.Component{
-    constructor(params){
-        super(params)
-    }
-
+export default class Resume extends React.Component{
     componentDidMount(){
     }
 

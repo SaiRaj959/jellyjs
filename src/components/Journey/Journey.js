@@ -1,13 +1,8 @@
 import React from 'react';
 import './Journey.scss';
-import {CalendarFilled} from '@ant-design/icons';
 import {skills} from '../../data/skills';
 
 export class Journey extends React.Component{
-
-    constructor(props){
-        super(props)
-    }
 
     render(){
         return(

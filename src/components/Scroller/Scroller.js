@@ -1,6 +1,5 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import './Scroller.scss';
-import {CaretUpOutlined, CaretDownOutlined} from '@ant-design/icons';
 
 export default class Scroller extends React.Component{
     props;

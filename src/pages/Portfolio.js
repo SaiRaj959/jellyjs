@@ -1,75 +1,11 @@
 import React from 'react';
 import Container from '../components/container/container';
-import SCards from '../components/scards/scards';
 import Projects from '../components/Projects/Projects';
 import './Portfolio.scss';
 import CoverComponent from '../components/CoverComponent/CoverComponent';
 import Scroller from '../components/Scroller/Scroller';
 import Skills from '../components/skills/skills';
 import { Journey } from '../components/Journey/Journey';
-
-export default class Portfolio extends React.Component{
-    state = {
-        animate: false,
-        exp_active: experience[0].id,
-        selected_exp: experience[0]
-    }
-    componentDidMount(){
-        this.setAnimation();
-    }
-
-    setAnimation(){
-        setTimeout(()=>{
-            this.setState({animate: true});
-        }, 1000);
-    }
-
-    onExpItemClicked(e){
-        console.log('onext selected->',e);
-        this.setState({...this.state, selected_exp: e, exp_active: e.id});
-    }
-
-    render(){
-        
-        return (
-            <div className="portfolio">
-                <Scroller>
-                    <Container props={{class:"jelly-portfolio"}}>
-                        <div className="portfolio-container">
-
-                            <CoverComponent props={{animate: this.state.animate}}/>
-                            <div className="portfolio-description">
-                                <div className="portfolio-description-wrapper">
-                                    <div className="portfolio-content">
-                                        <span>
-                                        Front-end developer with 7 years of experience. From pixel-perfect designs to interactive user interfaces, I specialize in crafting seamless digital experiences. Let's explore my portfolio and turn your ideas into extraordinary online realities!
-                                        </span>
-                                    </div>
-                                    {/* <div className="portfolio-more">
-                                        <div className="portfolio-more-action"><span>My Experience</span></div>
-                                        <div className="portfolio-more-action"><span>My Projects</span></div>
-                                        <div className="portfolio-more-action"><span>About me</span></div>
-                                    </div> */}
-                                </div>
-                            </div>
-                        </div>
-                    </Container>
-                    <Container props={{class:"jelly-skills", title: "My Skills"}}>
-                        <Skills />
-                    </Container>
-                    <Container props={{class:"jelly-projects", title:"My Projects"}}>
-                        <Projects />
-                    </Container>
-                    <Container props={{class:"jelly-experience", title:"My Experience", description: experience_desc}}>
-                        <Journey/>
-                    </Container>
-                </Scroller>
-            </div>
-        )
-    }
-}
-const projects_desc = "Front-end developer with 7 years of experience. From pixel-perfect designs to interactive user interfaces, I specialize in crafting seamless digital experiences. Let's explore my portfolio and turn your ideas into extraordinary online realities!";
-const experience_desc = `Embark on a journey through my career as a front-end developer, where each experience has shaped my expertise and fueled my passion for creating seamless digital experiences. Join me as I traverse through the diverse landscapes of web development, sharing insights gained from my tenure in multiple companies and projects.`;
 
 const experience = [{
     id: 'exp_1',
@@ -118,4 +54,67 @@ const experience = [{
         'Enhanced page styles with advanced css and added animated look & feel',
     ],
     skills: ['JS', 'JQuery', 'CSS', 'HTML', 'bootstrap']
-}]
+}];
+
+const experience_desc = `Embark on a journey through my career as a front-end developer, where each experience has shaped my expertise and fueled my passion for creating seamless digital experiences. Join me as I traverse through the diverse landscapes of web development, sharing insights gained from my tenure in multiple companies and projects.`;
+
+export default class Portfolio extends React.Component{
+    state = {
+        animate: false,
+        exp_active: experience[0].id,
+        selected_exp: experience[0]
+    }
+    componentDidMount(){
+        this.setAnimation();
+    }
+
+    setAnimation(){
+        setTimeout(()=>{
+            this.setState({animate: true});
+        }, 1000);
+    }
+
+    onExpItemClicked(e){
+        console.log('onext selected->',e);
+        this.setState({...this.state, selected_exp: e, exp_active: e.id});
+    }
+
+    render(){
+
+        return (
+            <div className="portfolio">
+                <Scroller>
+                    <Container props={{class:"jelly-portfolio"}}>
+                        <div className="portfolio-container">
+
+                            <CoverComponent props={{animate: this.state.animate}}/>
+                            <div className="portfolio-description">
+                                <div className="portfolio-description-wrapper">
+                                    <div className="portfolio-content">
+                                        <span>
+                                        Front-end developer with 7 years of experience. From pixel-perfect designs to interactive user interfaces, I specialize in crafting seamless digital experiences. Let's explore my portfolio and turn your ideas into extraordinary online realities!
+                                        </span>
+                                    </div>
+                                    {/* <div className="portfolio-more">
+                                        <div className="portfolio-more-action"><span>My Experience</span></div>
+                                        <div className="portfolio-more-action"><span>My Projects</span></div>
+                                        <div className="portfolio-more-action"><span>About me</span></div>
+                                    </div> */}
+                                </div>
+                            </div>
+                        </div>
+                    </Container>
+                    <Container props={{class:"jelly-skills", title: "My Skills"}}>
+                        <Skills />
+                    </Container>
+                    <Container props={{class:"jelly-projects", title:"My Projects"}}>
+                        <Projects />
+                    </Container>
+                    <Container props={{class:"jelly-experience", title:"My Experience", description: experience_desc}}>
+                        <Journey/>
+                    </Container>
+                </Scroller>
+            </div>
+        )
+    }
+}

@@ -3,92 +3,6 @@ import './Projects.scss';
 import SCards from '../scards/scards';
 import {skills} from '../../data/skills';
 
-export default class Projects extends React.Component{
-    state={
-        project: projects[0]
-    }
-    constructor(props){
-        super(props);
-    }
-    onExpItemClicked(evt){
-        console.log(evt);
-        this.setState({...this.state, project: evt});
-    }
-
-    render(){
-        console.log('skills:::::', skills, this.state.project.skills)
-        return(
-            <div className="projects-container">
-                <SCards props={{data: projects, onclick: this.onExpItemClicked.bind(this)}} />
-                <div className="project">
-                    <div className="project-content">
-                        <div className="project-images"></div>
-                        <div className="project-details">
-                            <h2>{this.state.project.label}</h2>
-                            <div className="project-company">
-                                <span className={(this.state.project.iconClass || '')}></span>
-                                <span className="company">{this.state.project.company}</span>
-                            </div>
-
-                            <div className="project-description">
-                                {this.state.project.description.map((desc, i)=>{
-                                    return (<div className="project-description-point point" key={i}>{desc}</div>)
-                                })}
-                            </div>
-
-                            <div className="project-skills">
-                                {this.state && this.state.project.skills && this.state.project.skills.map((skill,i)=>{
-                                    return (
-                                        <div className="chip bulge" key={i}>
-                                            {
-                                            skills[skill] 
-                                            ? 
-                                                <><span className={skills[skill].icon + " chip-icon"}></span>
-                                                <span className="chip-label">{skills[skill].label}</span></>
-                                            :
-                                                <span className="chip-label">{skill}</span>
-                                            }
-                                        </div>
-                                    )
-                                })}
-                            </div>
-                        </div>
-                    </div>
-                    
-                </div>
-            </div>
-        );
-    }
-
-    getSkillObject(skill){
-        return {
-            icon: skill,
-            label: skill
-        }
-    }
-}
-
-export class Chip extends React.Component{
-    state = {
-        icon: '',
-        label: ''
-    }
-    constructor(props){
-        super(props);
-    }
-    componentDidMount(){
-        console.log('CHIP', this.props.props, this.state);
-        this.state = this.setState({label: this.props.props, icon: this.props.props});
-    }
-    render(){
-        return(
-            <div className="chip">
-                <span className={this.state.icon + " chip-icon"}></span>
-                <span className="chip-label">{this.state.label}</span>
-            </div>
-        )
-    }
-}
 const projects = [{
     id: 'project_01',
     iconClass: 'gs-logo',
@@ -151,4 +65,87 @@ const projects = [{
     endDate: 'current',
     active: false,
     images: []
-}]
+}];
+
+export default class Projects extends React.Component{
+    state={
+        project: projects[0]
+    }
+
+    onExpItemClicked(evt){
+        console.log(evt);
+        this.setState({...this.state, project: evt});
+    }
+
+    render(){
+        console.log('skills:::::', skills, this.state.project.skills)
+        return(
+            <div className="projects-container">
+                <SCards props={{data: projects, onclick: this.onExpItemClicked.bind(this)}} />
+                <div className="project">
+                    <div className="project-content">
+                        <div className="project-images"></div>
+                        <div className="project-details">
+                            <h2>{this.state.project.label}</h2>
+                            <div className="project-company">
+                                <span className={(this.state.project.iconClass || '')}></span>
+                                <span className="company">{this.state.project.company}</span>
+                            </div>
+
+                            <div className="project-description">
+                                {this.state.project.description.map((desc, i)=>{
+                                    return (<div className="project-description-point point" key={i}>{desc}</div>)
+                                })}
+                            </div>
+
+                            <div className="project-skills">
+                                {this.state && this.state.project.skills && this.state.project.skills.map((skill,i)=>{
+                                    return (
+                                        <div className="chip bulge" key={i}>
+                                            {
+                                            skills[skill]
+                                            ?
+                                                <><span className={skills[skill].icon + " chip-icon"}></span>
+                                                <span className="chip-label">{skills[skill].label}</span></>
+                                            :
+                                                <span className="chip-label">{skill}</span>
+                                            }
+                                        </div>
+                                    )
+                                })}
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        );
+    }
+
+    getSkillObject(skill){
+        return {
+            icon: skill,
+            label: skill
+        }
+    }
+}
+
+export class Chip extends React.Component{
+    state = {
+        icon: '',
+        label: ''
+    }
+
+    componentDidMount(){
+        console.log('CHIP', this.props.props, this.state);
+        this.setState({label: this.props.props, icon: this.props.props});
+    }
+    render(){
+        return(
+            <div className="chip">
+                <span className={this.state.icon + " chip-icon"}></span>
+                <span className="chip-label">{this.state.label}</span>
+            </div>
+        )
+    }
+}
